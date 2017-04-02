@@ -29,7 +29,7 @@ public class DriveTrain extends Subsystem {
 	public static double rotateKp = 0.4;
 	public static double rotateKi = .2;
 	public static double rotateKd = 1.5;
-	public static double maxRotateSpeed = .6;
+	public static double maxRotateSpeed = .4;
 	public static double maxRotateDuringMove = .55;
 	public static double maxRotateError = 10;
 	public static double maxRotateErrorDurringMove = 40;
@@ -38,7 +38,7 @@ public class DriveTrain extends Subsystem {
 	public static double moveKp = 0.5;
 	public static double moveKi = .02;
 	public static double moveKd = 0.3;
-	public static double maxMoveSpeed = .6;
+	public static double maxMoveSpeed = .7;
 	public static double visionMoveTargetWidth = 40;
 	public static double visionMoveTargetWidthSlow = 25;
 
@@ -275,7 +275,7 @@ public class DriveTrain extends Subsystem {
 	// A method that a command can call on to give motors its values to move
 	// with.
 	public void arcadeDrive(double forward, double rotate) {
-		driveTrain.arcadeDrive(forward, rotate);
+		driveTrain.arcadeDrive(-forward, rotate);
 	}
 
 	// Shifts the gears into Torque Mode
@@ -318,9 +318,9 @@ public class DriveTrain extends Subsystem {
 		case ROTATE:
 		case MOVE:
 			if (centerWidth >= visionMoveTargetWidthSlow) {
-				arcadeDrive((-pidMoveOutput * .75), -pidRotateOutput);
+				arcadeDrive((pidMoveOutput * .75), -pidRotateOutput);
 			} else {
-				arcadeDrive(-pidMoveOutput, -pidRotateOutput);
+				arcadeDrive(pidMoveOutput, -pidRotateOutput);
 			}
 			break;
 

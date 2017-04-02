@@ -12,6 +12,6 @@ public class PositionArm4Score extends CommandGroup {
     public PositionArm4Score() {
     	requires(Robot.arm);
     	addSequential(new PositionArmTop());
-    	addSequential(new MoveArmForTime(0.5, 0.4));
+    	addSequential(new MoveArmForTime(-0.5, 0.3));
     }
 }

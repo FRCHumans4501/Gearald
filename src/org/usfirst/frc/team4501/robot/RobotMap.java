@@ -14,12 +14,12 @@ public class RobotMap {
 		public static final int RIGHT_CAN_MOTOR_MASTER = 14;
 		public static final int RIGHT_CAN_MOTOR_SLAVE = 15;
 		
-		public static final int LIFT = 5;
+		public static final int LIFT = 1;
 
-		public static final int ARM = 3;
+		public static final int ARM = 2;
 		
-		public static final int FLYWEEL = 3;
-		public static final int INTAKE = 4;
+		public static final int FLYWEEL = 4;
+		public static final int INTAKE = 0;
 	}
 
 	public static class Solenoids {
@@ -30,8 +30,8 @@ public class RobotMap {
 	}
 	
 	public static class Sensors {
-		public static final int ARM_HIGH = 0;
-		public static final int ARM_LOW = 1;
+		public static final int ARM_HIGH = 1;
+		public static final int ARM_LOW = 0;
 		public static final int SHOOTER_ENCODER_A = 2, SHOOTER_ENCODER_B = 3;
 	}
 

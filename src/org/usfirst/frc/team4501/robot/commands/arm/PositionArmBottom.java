@@ -9,7 +9,7 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class PositionArmBottom extends Command {
 	private boolean isDone;
-	boolean armDown;
+	boolean armDown = false;
 
     public PositionArmBottom() {
 		requires(Robot.arm);
@@ -22,9 +22,9 @@ public class PositionArmBottom extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-		Robot.arm.armOpen();
+		Robot.arm.armClose();
     	if (!Robot.arm.isArmDown() && armDown == false) {
-			Robot.arm.moveArm(.8);
+			Robot.arm.moveArm(-.7);
 		} else if (Robot.arm.isArmDown()) {
 			armDown= true;
 			isDone = true;

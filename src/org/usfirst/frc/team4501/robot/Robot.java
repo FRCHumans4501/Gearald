@@ -1,6 +1,9 @@
 
 package org.usfirst.frc.team4501.robot;
 
+import org.usfirst.frc.team4501.robot.commands.auto.NoAuto;
+import org.usfirst.frc.team4501.robot.commands.auto.DriveStraightAuto;
+import org.usfirst.frc.team4501.robot.commands.auto.DriveStraightandDrop;
 import org.usfirst.frc.team4501.robot.commands.auto.LeftAutoCommand;
 import org.usfirst.frc.team4501.robot.commands.auto.MiddleAutoCommand;
 import org.usfirst.frc.team4501.robot.commands.auto.RightAutoCommand;
@@ -45,7 +48,10 @@ public class Robot extends IterativeRobot {
 	public void robotInit() {
 		instance = this;
 		oi = new OI();
-        autoChooser.addDefault("Auto From Middle", new MiddleAutoCommand());
+		autoChooser.addDefault("nothing", new NoAuto());
+		autoChooser.addObject("Drive Straight and Drop", new DriveStraightandDrop());
+		autoChooser.addObject("Drive Straight", new DriveStraightAuto());
+        autoChooser.addObject("Auto From Middle", new MiddleAutoCommand());
         autoChooser.addObject("Auto From Right", new RightAutoCommand());
         autoChooser.addObject("Auto From Left", new LeftAutoCommand());
 		SmartDashboard.putData("Auto mode", autoChooser);

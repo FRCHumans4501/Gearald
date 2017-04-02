@@ -78,7 +78,7 @@ public class Shooter extends Subsystem {
 		// Initialization of Talons.
 		shootTalon = new Talon(RobotMap.Motors.FLYWEEL);
 		intakeTalon = new Talon(RobotMap.Motors.INTAKE);
-		
+
 		// Initialization of the Encoder that the PID uses.
 		shooterEncoder = new Encoder(RobotMap.Sensors.SHOOTER_ENCODER_A, RobotMap.Sensors.SHOOTER_ENCODER_B);
 	}
@@ -89,7 +89,6 @@ public class Shooter extends Subsystem {
 		}
 		
 		shooterMotor.enable();
-		intakeTalon.set(0);
 	}
 	
 	public void disable() {
@@ -119,7 +118,7 @@ public class Shooter extends Subsystem {
 	
 	public void shootStop() {
 		shootTalon.set(0);
-		disable();
+		//disable();
 	}	
 	
 	public void intake(double speed) {
