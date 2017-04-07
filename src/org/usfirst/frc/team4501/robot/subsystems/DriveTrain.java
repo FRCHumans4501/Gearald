@@ -29,8 +29,8 @@ public class DriveTrain extends Subsystem {
 	public static double rotateKp = 0.4;
 	public static double rotateKi = .2;
 	public static double rotateKd = 1.5;
-	public static double maxRotateSpeed = .4;
-	public static double maxRotateDuringMove = .55;
+	public static double maxRotateSpeed = .5;
+	public static double maxRotateDuringMove = .45;
 	public static double maxRotateError = 10;
 	public static double maxRotateErrorDurringMove = 40;
 

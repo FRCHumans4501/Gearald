@@ -23,8 +23,8 @@ public class RobotMap {
 	}
 
 	public static class Solenoids {
-		public static final int HIGHGEAR = 2;
-		public static final int LOWGEAR = 3;
+		public static final int HIGHGEAR = 3;
+		public static final int LOWGEAR = 2;
 		public static final int ARMHIGH = 0;
 		public static final int ARMLOW = 1;
 	}

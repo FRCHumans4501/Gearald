@@ -5,11 +5,11 @@ import org.usfirst.frc.team4501.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
- * Shifts the gears into torque mode.
+ * Shifts the gears into speed mode.
  */
-public class ShiftGearsHigh extends Command {
+public class ShiftGearHigh extends Command {
 
-    public ShiftGearsHigh() {
+    public ShiftGearHigh() {
     	requires(Robot.driveTrain);
     }
 
@@ -19,7 +19,7 @@ public class ShiftGearsHigh extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.driveTrain.shiftGearsHigh();
+    	Robot.driveTrain.shiftGearsLow();  
     }
 
     // Make this return true when this Command no longer needs to run execute()

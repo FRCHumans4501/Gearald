@@ -25,7 +25,7 @@ public class PositionArmTop extends Command {
 	protected void execute() {
 		Robot.arm.armClose();
 		if (!Robot.arm.isArmUp() && armUp == false) {
-			Robot.arm.moveArm(.8);
+			Robot.arm.moveArm(.7);
 		} else if (Robot.arm.isArmUp()) {
 			armUp = true;
 			isDone = true;

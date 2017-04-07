@@ -20,7 +20,7 @@ public class Lift extends Subsystem {
 	
 	// A method that makes the lift motor spin so it can lift the robot up.
 	public void liftRobot() {
-		liftTalon.set(-.75);
+		liftTalon.set(-.85);
 	}
 	
 	// A method that stops the Lift from moving when it doesn't need to.

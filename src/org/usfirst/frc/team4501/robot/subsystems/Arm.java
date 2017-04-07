@@ -59,14 +59,15 @@ public class Arm extends Subsystem {
 	// A method that rotates the arm up and down and limits the arm from going
 	// to far in either direction.
 	public void moveArm(double speed) {
-		if (speed > 0) {
-			if (isArmUp()) {
+		speed = -speed;
+		if (speed > 0) { 
+			if (isArmDown()) {
 				armMotor.set(0);
 			} else {
 				armMotor.set(speed);
 			}
 		} else if (speed < 0) {
-			if (isArmDown()) {
+			if (isArmUp()) {
 				armMotor.set(0);
 			} else {
 				armMotor.set(speed);

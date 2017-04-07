@@ -4,8 +4,8 @@ import org.usfirst.frc.team4501.robot.commands.arm.ArmClose;
 import org.usfirst.frc.team4501.robot.commands.arm.ArmOpen;
 import org.usfirst.frc.team4501.robot.commands.arm.PositionArmBottom;
 import org.usfirst.frc.team4501.robot.commands.arm.PositionArmTop;
-import org.usfirst.frc.team4501.robot.commands.drivetrain.ShiftGearsHigh;
 import org.usfirst.frc.team4501.robot.commands.drivetrain.ShiftGearsLow;
+import org.usfirst.frc.team4501.robot.commands.drivetrain.ShiftGearHigh;
 import org.usfirst.frc.team4501.robot.commands.arm.PositionArm4Score;
 import org.usfirst.frc.team4501.robot.commands.lift.LiftRobot;
 import org.usfirst.frc.team4501.robot.commands.lift.StopLift;
@@ -30,13 +30,13 @@ public class OI {
 
 	Button shiftHigh = new JoystickButton(controller, controller.BUTTON_A);
 	Button shiftLow = new JoystickButton(controller, controller.BUTTON_B);
+	Button shoot = new JoystickButton(stick, BUTTON_2);
+	Button liftBot = new JoystickButton(stick, BUTTON_3);
 	Button armOpen = new JoystickButton(stick, BUTTON_4);
 	Button armClose = new JoystickButton(stick, BUTTON_5);
 	Button intake = new JoystickButton(stick, TRIGGER);
-	Button shoot = new JoystickButton(stick, BUTTON_2);
-	Button liftBot = new JoystickButton(stick, BUTTON_3);
-	Button armSetup = new JoystickButton(stick, BUTTON_6);
-	Button armUp = new JoystickButton(stick, BUTTON_7);
+	Button armUp = new JoystickButton(stick, BUTTON_6);
+	Button armSetup = new JoystickButton(stick, BUTTON_7);
 	Button armDown = new JoystickButton(stick, BUTTON_8);
 
 	public OI() {
@@ -48,8 +48,8 @@ public class OI {
 		armClose.whenPressed(new ArmClose());
 
 		// Drivetrain Commands
-		shiftHigh.whenPressed(new ShiftGearsHigh());
-		shiftLow.whenPressed(new ShiftGearsLow());
+		shiftHigh.whenPressed(new ShiftGearsLow());
+		shiftLow.whenPressed(new ShiftGearHigh());
 
 		// Shooter Commands
 		shoot.whileHeld(new Shoot());
