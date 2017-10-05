@@ -22,7 +22,7 @@ public class ArcadeDrive extends Command {
 
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute() {
-		Robot.driveTrain.arcadeDrive(oi.getTriggers(), oi.getLeftXboxX());
+		Robot.driveTrain.arcadeDrive(-oi.getTriggers(), oi.getLeftXboxX());
 	}
 
 	// Make this return true when this Command no longer needs to run execute()
