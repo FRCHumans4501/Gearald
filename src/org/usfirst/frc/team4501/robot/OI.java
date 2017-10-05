@@ -30,14 +30,12 @@ public class OI {
 
 	Button shiftHigh = new JoystickButton(controller, controller.BUTTON_A);
 	Button shiftLow = new JoystickButton(controller, controller.BUTTON_B);
-	Button shoot = new JoystickButton(stick, BUTTON_2);
-	Button liftBot = new JoystickButton(stick, BUTTON_3);
-	Button armOpen = new JoystickButton(stick, BUTTON_4);
-	Button armClose = new JoystickButton(stick, BUTTON_5);
-	Button intake = new JoystickButton(stick, TRIGGER);
-	Button armUp = new JoystickButton(stick, BUTTON_6);
+	Button liftBot = new JoystickButton(stick, BUTTON_2);
+	Button armOpen = new JoystickButton(stick, BUTTON_3);
+	Button armClose = new JoystickButton(stick, TRIGGER);
+	Button armUp = new JoystickButton(stick, BUTTON_8);
 	Button armSetup = new JoystickButton(stick, BUTTON_7);
-	Button armDown = new JoystickButton(stick, BUTTON_8);
+	Button armDown = new JoystickButton(stick, BUTTON_6);
 
 	public OI() {
 		// Arm Commands
@@ -52,10 +50,7 @@ public class OI {
 		shiftLow.whenPressed(new ShiftGearHigh());
 
 		// Shooter Commands
-		shoot.whileHeld(new Shoot());
-		shoot.whenReleased(new IntakeStop());
-		intake.whileHeld(new Intake());
-		intake.whenReleased(new IntakeStop());
+	
 
 		// Lift Commands
 		liftBot.whileHeld(new LiftRobot());
